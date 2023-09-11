@@ -1,19 +1,21 @@
 import java.util.*;
 
 public class Hotel {
-    static customer  hotel_ob = new customer();
-    static Scanner sc = new Scanner(System.in);
+     customer  hotel_ob = new customer();
+     Scanner sc = new Scanner(System.in);
 
-    static void CustDetails(int i, int rn) {
+    public void GuestDetails(int i, int rn) {
         String name, contact, gender;
         String name2 = null, contact2 = null;
         String gender2 = "";
+
         System.out.print("\nEnter customer name: ");
         name = sc.next();
         System.out.print("Enter contact number: ");
         contact = sc.next();
         System.out.print("Enter gender: ");
         gender = sc.next();
+
         if (i < 3) {
             System.out.print("Enter second customer name: ");
             name2 = sc.next();
@@ -42,7 +44,7 @@ public class Hotel {
         }
     }
 
-    static void bookroom(int i) {
+    public void bookroom(int i) {
         int j;
         int rn;
         System.out.println("\nChoose Room Number from The Given Room Here : ");
@@ -59,7 +61,7 @@ public class Hotel {
                     rn--;
                     if (hotel_ob.luxury_doublerrom[rn] != null)
                         throw new NotAvailable();
-                    CustDetails(i, rn);
+                    GuestDetails(i, rn);
                 } catch (Exception e) {
                     System.out.println("Invalid Option");
                     return;
@@ -77,7 +79,7 @@ public class Hotel {
                     rn = rn - 11;
                     if (hotel_ob.deluxe_doublerrom[rn] != null)
                         throw new NotAvailable();
-                    CustDetails(i, rn);
+                    GuestDetails(i, rn);
                 } catch (Exception e) {
                     System.out.println("Invalid Option");
                     return;
@@ -95,7 +97,7 @@ public class Hotel {
                     rn = rn - 31;
                     if (hotel_ob.luxury_singleerrom[rn] != null)
                         throw new NotAvailable();
-                    CustDetails(i, rn);
+                    GuestDetails(i, rn);
                 } catch (Exception e) {
                     System.out.println("Invalid Option");
                     return;
@@ -113,7 +115,7 @@ public class Hotel {
                     rn = rn - 41;
                     if (hotel_ob.deluxe_singleerrom[rn] != null)
                         throw new NotAvailable();
-                    CustDetails(i, rn);
+                    GuestDetails(i, rn);
                 } catch (Exception e) {
                     System.out.println("Invalid Option");
                     return;
@@ -126,7 +128,7 @@ public class Hotel {
         System.out.println("Room Booked");
     }
 
-    static void features(int i) {
+    public void features(int i) {
         switch (i) {
             case 1:
                 System.out.println("Number of double beds : 1\nAC : Yes\nFree breakfast : Yes\nCharge per night BDT:6999 ");
@@ -146,7 +148,7 @@ public class Hotel {
         }
     }
 
-    static void availability(int i) {
+    public void availability(int i) {
         int j, count = 0;
         switch (i) {
             case 1:
@@ -180,7 +182,7 @@ public class Hotel {
         System.out.println("Number of rooms available : " + count);
     }
 
-    static void bill(int rn, int rtype) {
+    public void bill(int rn, int rtype) {
         double amount = 0;
         String list[] = { "Sandwich", "Pasta", "Noodles", "Coke", "water", "Khechuri" };
         System.out.println("\\\\\\\\\\\\\\\\");
@@ -251,7 +253,7 @@ public class Hotel {
         System.out.println("\nTotal Amount- " + amount);
     }
 
-    static void deallocate(int rn, int rtype) {
+    public void deallocate(int rn, int rtype) {
         //int j;
         char w;
         switch (rtype) {
@@ -324,7 +326,7 @@ public class Hotel {
         }
     }
 
-    static void order(int rn, int rtype) {
+    public void order(int rn, int rtype) {
         int i, q;
         char yes;
         try {

@@ -61,7 +61,7 @@ class Singleroom implements Serializable {
 
 class Doubleroom extends Singleroom{
     String name2;
-    String contact2; // inheritance
+    String contact2; 
     String gender2;
 
     Doubleroom() {
@@ -80,17 +80,16 @@ class Doubleroom extends Singleroom{
 }
 
 class NotAvailable extends Exception {
-    @Override
     public String toString() {
-        return "Not Available !";                  //userdefine exception handling//
+        return "Not Available !";                 
     }
 }
 
-class customer implements Serializable {
-    Doubleroom luxury_doublerrom[] = new Doubleroom[10]; // Luxury //inteface
-    Doubleroom deluxe_doublerrom[] = new Doubleroom[20]; // Deluxe
-    Singleroom luxury_singleerrom[] = new Singleroom[10]; // Luxury
-    Singleroom deluxe_singleerrom[] = new Singleroom[20]; // Deluxe
+class customer {
+    Doubleroom luxury_doublerrom[] = new Doubleroom[10]; 
+    Doubleroom deluxe_doublerrom[] = new Doubleroom[20]; 
+    Singleroom luxury_singleerrom[] = new Singleroom[10]; 
+    Singleroom deluxe_singleerrom[] = new Singleroom[20]; 
 }
 
 public class HotelManagementSystem extends Hotel{
@@ -98,6 +97,8 @@ public class HotelManagementSystem extends Hotel{
 
     
             Scanner sc = new Scanner(System.in);
+            
+            Hotel Hotel = new Hotel();
             WelcomeMessage wm = new WelcomeMessage();
             GoodByeMessage gm = new GoodByeMessage();
 
@@ -105,7 +106,7 @@ public class HotelManagementSystem extends Hotel{
             char yes;
             x: do {
 
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("             yyyy/MM/dd HH:mm:ss");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd    HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
                 System.out.println(dtf.format(now));
                 
@@ -132,10 +133,10 @@ public class HotelManagementSystem extends Hotel{
                         Hotel.bookroom(ch2);
                         break;
                     case 4:
-                        System.out.print("Room Number -");
+                        System.out.print("Room Number: ");
                         ch2 = sc.nextInt();
                         if (ch2 > 60)
-                            System.out.println("This Room Number doesn't exist");
+                            System.out.println("This Room doesn't exist");
                         else if (ch2 > 40)
                             Hotel.order(ch2 - 41, 4);
                         else if (ch2 > 30)
@@ -145,13 +146,13 @@ public class HotelManagementSystem extends Hotel{
                         else if (ch2 > 0)
                             Hotel.order(ch2 - 1, 1);
                         else
-                            System.out.println("This Room  Number doesn't exist");
+                            System.out.println("This Room doesn't exist");
                         break;
                     case 5:
-                        System.out.print("Room Number -");
+                        System.out.print("Room Number: ");
                         ch2 = sc.nextInt();
                         if (ch2 > 60)
-                            System.out.println("The Room Number doesn't exist");
+                            System.out.println("The Room doesn't exist");
                         else if (ch2 > 40)
                             Hotel.deallocate(ch2 - 41, 4);
                         else if (ch2 > 30)
@@ -161,7 +162,7 @@ public class HotelManagementSystem extends Hotel{
                         else if (ch2 > 0)
                             Hotel.deallocate(ch2 - 1, 1);
                         else
-                            System.out.println("The Room Number doesn't exist");
+                            System.out.println("The Room doesn't exist");
                         break;
                     case 6:
                         gm.showGoodByeMessage();
