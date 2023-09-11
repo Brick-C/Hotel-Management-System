@@ -3,12 +3,12 @@
 // import java.io.FileOutputStream;
 // import java.io.ObjectInputStream;
 // import java.io.ObjectOutputStream;
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-class FoodItem implements Serializable {
+class FoodItem {
     int items;
     int quantity;
     float price;
@@ -42,11 +42,11 @@ class FoodItem implements Serializable {
     }
 }
 
-class Singleroom implements Serializable {
+class Singleroom{
     String name;
     String contact;
     String gender;
-    ArrayList<FoodItem> food = new ArrayList<>(); // interface
+    ArrayList<FoodItem> food = new ArrayList<>();
 
     Singleroom() {
         this.name = "";
@@ -97,9 +97,10 @@ public class HotelManagementSystem extends Hotel{
 
     
             Scanner sc = new Scanner(System.in);
-            
+
             Hotel Hotel = new Hotel();
             WelcomeMessage wm = new WelcomeMessage();
+            Menu m = new Menu();
             GoodByeMessage gm = new GoodByeMessage();
 
             int ch, ch2;
@@ -111,6 +112,7 @@ public class HotelManagementSystem extends Hotel{
                 System.out.println(dtf.format(now));
                 
                 wm.welcomeMessage();
+                m.showMenuOptions();
 
                 ch = sc.nextInt();
                 switch (ch) {
