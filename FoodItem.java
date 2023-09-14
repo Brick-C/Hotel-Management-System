@@ -8,16 +8,16 @@ class FoodItem extends HotelManagementSystem{
         this.quantity = quantity;
         switch (items) {
             case 1:
-                price = quantity * 50;
+                price = quantity * 155;
                 break;
             case 2:
-                price = quantity * 60;
+                price = quantity * 260;
                 break;
             case 3:
                 price = quantity * 70;
                 break;
             case 4:
-                price = quantity * 30;
+                price = quantity * 25;
 
                 break;
             case 5:
@@ -25,7 +25,7 @@ class FoodItem extends HotelManagementSystem{
                 break;
 
                 case 6:
-                price = quantity *290;
+                price = quantity * 200;
             
             
         }

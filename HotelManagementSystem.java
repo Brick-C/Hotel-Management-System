@@ -64,7 +64,7 @@ public class HotelManagementSystem extends Hotel{
                 
                 wm.welcomeMessage();
 
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("\tyyyy/MM/dd    \tHH:mm:ss");
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("\tyyyy/MM/dd    \t\tHH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
                 System.out.println(dtf.format(now));
 

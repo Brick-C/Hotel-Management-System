@@ -62,7 +62,7 @@ public class Hotel {
                         System.out.print(j + 1 + ",");
                     }
                 }
-                System.out.println("Enter room number: ");
+                System.out.println("\nEnter room number: ");
                 try {
                     rn = sc.nextInt();
                     rn--;
@@ -132,22 +132,22 @@ public class Hotel {
                 System.out.println("Enter valid option");
                 break;
         }
-        System.out.println("Room Booked");
+        System.out.println("\nRoom Booked!!");
     }
 
     public void features(int i) {
         switch (i) {
             case 1:
-                System.out.println("Number of double beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : Yes\nCharge per night BDT:6999 ");
+                System.out.println("\nNumber of double beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : Yes\nCharge per night BDT:6999 ");
                 break;
             case 2:
-                System.out.println("Number of double beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : No\nCharge per night BDT:6549  ");
+                System.out.println("\nNumber of double beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : No\nCharge per night BDT:6549  ");
                 break;
             case 3:
-                System.out.println("Number of single beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : No\nCharge per night BDT:5999  ");
+                System.out.println("\nNumber of single beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : No\nCharge per night BDT:5999  ");
                 break;
             case 4:
-                System.out.println("Number of single beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : No\nCharge per night BDT:5549 ");
+                System.out.println("\nNumber of single beds : 1\nAC : Yes\nFree breakfast : Yes\nFree Wifi : No\nCharge per night BDT:5549 ");
                 break;
             default:
                 System.out.println("Enter valid option");
