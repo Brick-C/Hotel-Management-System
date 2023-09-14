@@ -1,46 +1,7 @@
-// import java.io.File;
-// import java.io.FileInputStream;
-// import java.io.FileOutputStream;
-// import java.io.ObjectInputStream;
-// import java.io.ObjectOutputStream;
-//import java.io.Serializable;
 import java.util.*;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-class FoodItem {
-    int items;
-    int quantity;
-    float price;
-
-    FoodItem(int items, int quantity) { 
-        this.items = items;
-        this.quantity = quantity;
-        switch (items) {
-            case 1:
-                price = quantity * 50;
-                break;
-            case 2:
-                price = quantity * 60;
-                break;
-            case 3:
-                price = quantity * 70;
-                break;
-            case 4:
-                price = quantity * 30;
-
-                break;
-            case 5:
-                price = quantity * 15;
-                break;
-
-                case 6:
-                price = quantity *290;
-            
-            
-        }
-    }
-}
 
 class Singleroom{
     String name;
@@ -85,12 +46,6 @@ class NotAvailable extends Exception {
     }
 }
 
-class customer {
-    Doubleroom luxury_doublerrom[] = new Doubleroom[10]; 
-    Doubleroom deluxe_doublerrom[] = new Doubleroom[20]; 
-    Singleroom luxury_singleerrom[] = new Singleroom[10]; 
-    Singleroom deluxe_singleerrom[] = new Singleroom[20]; 
-}
 
 public class HotelManagementSystem extends Hotel{
     public static void main(String[] args) {
@@ -105,13 +60,14 @@ public class HotelManagementSystem extends Hotel{
 
             int ch, ch2;
             char yes;
-            x: do {
-
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd    HH:mm:ss");
-                LocalDateTime now = LocalDateTime.now();
-                System.out.println(dtf.format(now));
+            do {
                 
                 wm.welcomeMessage();
+
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("\tyyyy/MM/dd    \tHH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                System.out.println(dtf.format(now));
+
                 m.showMenuOptions();
 
                 ch = sc.nextInt();
@@ -135,7 +91,7 @@ public class HotelManagementSystem extends Hotel{
                         Hotel.bookroom(ch2);
                         break;
                     case 4:
-                        System.out.print("Room Number: ");
+                        System.out.print("\tRoom Number: ");
                         ch2 = sc.nextInt();
                         if (ch2 > 60)
                             System.out.println("This Room doesn't exist");
@@ -151,34 +107,40 @@ public class HotelManagementSystem extends Hotel{
                             System.out.println("This Room doesn't exist");
                         break;
                     case 5:
-                        System.out.print("Room Number: ");
+                        System.out.print("\tRoom Number: ");
                         ch2 = sc.nextInt();
                         if (ch2 > 60)
-                            System.out.println("The Room doesn't exist");
+                            System.out.println("This Room doesn't exist");
                         else if (ch2 > 40)
-                            Hotel.deallocate(ch2 - 41, 4);
+                            Hotel.checkout(ch2 - 41, 4);
                         else if (ch2 > 30)
-                            Hotel.deallocate(ch2 - 31, 3);
+                            Hotel.checkout(ch2 - 31, 3);
                         else if (ch2 > 10)
-                            Hotel.deallocate(ch2 - 11, 2);
+                            Hotel.checkout(ch2 - 11, 2);
                         else if (ch2 > 0)
-                            Hotel.deallocate(ch2 - 1, 1);
+                            Hotel.checkout(ch2 - 1, 1);
                         else
-                            System.out.println("The Room doesn't exist");
+                            System.out.println("This Room doesn't exist");
                         break;
                     case 6:
                         gm.showGoodByeMessage();
-                        break x;
+                        break;
+                    default:
+                        System.out.println("Invalid Option");
+                        break;
 
                 }
 
-                System.out.println("\nDo you want to continue ? IF Continue press (y) else doesn't continue press (n)");
+                System.out.println("\nDo you want to continue ? IF Continue press (y); else press (n)");
                 yes = sc.next().charAt(0);
                 if (!(yes == 'y' || yes == 'Y' || yes== 'n' || yes == 'N')) {
-                    System.out.println("Invalid Option");
+                    System.out.println("Invalid Input");
                     System.out.println(
-                            "\nDo you want to continue ? IF Continue press (y) else doesn't continue press (n)");
+                            "\nDo you want to continue ? IF Continue press (y); else press (n)");
                     yes = sc.next().charAt(0);
+                }
+                else if (yes == 'n' || yes == 'N') {
+                    gm.showGoodByeMessage();
                 }
 
             } while (yes == 'y' || yes== 'Y');

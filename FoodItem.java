@@ -1,4 +1,4 @@
-class FoodItem {
+class FoodItem extends HotelManagementSystem{
     int items;
     int quantity;
     float price;
